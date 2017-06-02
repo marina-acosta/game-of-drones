@@ -1,0 +1,21 @@
+@import "parameters";
+
+.round-form-container {
+  display: inline-block;
+  margin: 30px 10%;
+  text-align: center;
+
+  .title {
+    font-size: $big;
+  }
+
+  .player-container {
+    font-size: $medium;
+  }
+
+  select {
+    display: block;
+    cursor: pointer;
+    margin: 10px auto;
+  }
+}

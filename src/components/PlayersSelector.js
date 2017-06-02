@@ -52,8 +52,8 @@ export default class PlayersSelectorComponent extends Component {
         }
         if (ok) {
             this.props.onSubmit({
-                one: _playerOneClassName,
-                two: _playerTwoClassName
+                one: this.playerOne.value,
+                two: this.playerTwo.value
             });
         } else {
             this.setState({

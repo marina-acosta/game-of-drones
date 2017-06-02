@@ -8,7 +8,7 @@ class PlayersSelection extends Component {
 
     render() {
         return (
-            <PlayersSelectorComponent onSubmit={(e) => this.handleSubmit(e)}/>
+            <PlayersSelectorComponent onSubmit={(e) => this.handleSubmit(e)} />
         )
     }
 
