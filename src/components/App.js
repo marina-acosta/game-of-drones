@@ -1,8 +1,10 @@
 import React from 'react'
+import Header from './Header'
 
 const App = (props) => (
     <div className="app-container">
-        { "Game of drones !!" }
+        <Header />
+        {props.children}
     </div>
 )
 

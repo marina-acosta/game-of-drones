@@ -2,7 +2,17 @@
 ************* BREAK POINTS ****************
 ******************************************/
 $break-small: 680px;
+$break-medium: 1000px;
 
+
+
+/******************************************
+*************     SIZES    ****************
+******************************************/
+$smallest: 20px;
+$small: 25px;
+$medium: 35px;
+$big: 60px;
 
 
 /*******************************************
@@ -11,7 +21,11 @@ $break-small: 680px;
 
 // NORMALIZE COLORS BY NAME
 $light-green: #BCF5A9;
-
+$green: green;
+$red: red;
 
 // USAGE
 $main-background: $light-green;
+$title-color: $green;
+$bordersColor: $green;
+$error: $red;

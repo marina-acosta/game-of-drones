@@ -1,0 +1,46 @@
+@import "parameters";
+
+.players-selector-container {
+  display: block;
+  border: solid 2px $bordersColor;
+  border-radius: 30px;
+  padding: 45px 30px;
+  margin: auto;
+  width: 600px;
+  text-align: center;
+
+  @media (max-width: $break-medium) {
+    width: 60%;
+  }
+
+  .title {
+    font-size: $medium;
+  }
+
+  .player-container {
+    padding: 15px 15px;
+
+    label {
+      font-size: $smallest;
+    }
+
+    input {
+      font-size: $small;
+      padding: 15px 15px;
+      margin: 15px 0 0 15px;
+      border-radius: 10px;
+    }
+
+    .input-error {
+      border: solid 3px $error;
+    }
+  }
+
+  input[type="submit"] {
+    font-size: 25px;
+    padding: 15px 60px;
+    border-radius: 10px;
+    margin-top: 35px;
+    cursor: pointer;
+  }
+}
