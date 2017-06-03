@@ -38,6 +38,12 @@ class PlayGame extends Component {
         )
     }
 
+    componentWillMount() {
+        if (!this.props.players || this.props.players.length < 2 ) {
+            browserHistory.push('/')
+        }
+    }
+
     handlePlayAgain(){
         browserHistory.push('/')
     }
