@@ -2,8 +2,11 @@
 
 ## Setup
 git clone https://github.com/marina-acosta/game-of-drones.git
+
 cd game-of-drones
+
 npm install
+
 
 ## Usage
 Start the development server with this command:
