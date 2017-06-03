@@ -89,7 +89,6 @@ class PlayGame extends Component {
                 if (!stop) {
                     ranking.push({ name: this.props.players[_winner], count: 1 });
                 }
-                console.log(ranking, JSON.stringify(ranking));
                 localStorage.setItem('ranking', JSON.stringify(ranking));
             }
         }
