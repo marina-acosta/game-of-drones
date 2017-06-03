@@ -1,21 +1,68 @@
 @import "parameters";
 
 .round-form-container {
-  display: inline-block;
-  margin: 30px 10%;
+  display: block;
+  margin: 0 auto;
   text-align: center;
+  background-color: $light-gray;
+  border: solid 2px $main-color;
+  border-radius: 30px;
+  padding: 20px 30px 35px 30px;
+  width: 600px;
+
+
+  @media (max-width: $break-point-2) {
+    width: 60%;
+
+    select {
+      max-width: 80%;
+    }
+  }
 
   .title {
     font-size: $big;
+    line-height: 60px;
+    font-weight: bold;
+    text-shadow: 0 0.5px 0.5px $secondary-light,
+    -1px -1px 0 $dark-gray,
+    1px -1px 0 $dark-gray,
+    -1px 1px 0 $dark-gray,
+    1px 1px 0 $dark-gray;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
   }
 
   .player-container {
     font-size: $medium;
+    line-height: 40px;
+    font-weight: bold;
+    text-shadow: 0 0.5px 0.5px $secondary-light,
+    -1px -1px 0 $dark-gray,
+    1px -1px 0 $dark-gray,
+    -1px 1px 0 $dark-gray,
+    1px 1px 0 $dark-gray;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
   }
 
   select {
     display: block;
     cursor: pointer;
     margin: 10px auto;
+    width: 80%;
+    text-align-last: center;
+  }
+
+  input[type="submit"] {
+    margin-top:15px !important;
+    border-color: $main-color;
+  }
+
+  img {
+    margin: 15px 10px 0 0;
   }
 }

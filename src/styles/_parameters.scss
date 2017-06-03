@@ -1,19 +1,20 @@
 /******************************************
 ************* BREAK POINTS ****************
 ******************************************/
-$break-small: 680px;
-$break-medium: 1000px;
+$break-point-1: 420px;
+$break-point-2: 680px;
+$break-point-3: 900px;
 
 
 
 /******************************************
 *************     SIZES    ****************
 ******************************************/
-$smallest: 20px;
-$small: 25px;
-$medium: 35px;
-$big: 45px;
-$biggest: 60px;
+$smallest: 18px;
+$small: 20px;
+$medium: 30px;
+$big: 60px;
+$biggest: 90px;
 
 
 /*******************************************
@@ -21,12 +22,9 @@ $biggest: 60px;
 *******************************************/
 
 // NORMALIZE COLORS BY NAME
-$light-green: #BCF5A9;
-$green: green;
-$red: red;
-
-// USAGE
-$main-background: $light-green;
-$title-color: $green;
-$bordersColor: $green;
-$error: $red;
+$main-color: #D54D7B;
+$secondary-light: #FFFFFF;
+$secondary-dark: #222222;
+$error: #B40431;
+$light-gray: #EAEAEA;
+$dark-gray: #2E2E2E;

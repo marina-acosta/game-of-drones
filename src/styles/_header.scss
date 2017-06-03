@@ -1,9 +1,65 @@
 @import "parameters";
 
 .header-container {
-  font-size: $biggest;
-  font-weight: bolder;
-  color: $title-color;
   text-align: center;
-  padding: 40px;
+
+  .title {
+    padding: 25px;
+    color: $main-color;
+    font-family: "Great Vibes", cursive;
+    font-size: $biggest;
+    line-height: 80px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 40px;
+    text-align: center;
+    text-shadow: 0 1px 1px $secondary-light,
+    -3px -3px 0 $secondary-dark,
+    3px -3px 0 $secondary-dark,
+    -3px 3px 0 $secondary-dark,
+    3px 3px 0 $secondary-dark,
+    4px 4px 0 $secondary-light,
+    5px 5px 0 $secondary-light,
+    6px 6px 0 $secondary-light,
+    7px 7px 0 $secondary-light;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
+
+    @media (max-width: $break-point-1) {
+      font-size: $big;
+      line-height: 80px;
+    }
+  }
+
+  .links-container  {
+    float: right;
+    font-size: $small;
+    margin-right: 50px;
+
+    div {
+      display: inline;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-right: 10px;
+      color: $secondary-dark;
+      font-family: "Great Vibes", cursive;
+      font-size: $small;
+      line-height: 20px;
+      font-weight: bold;
+      text-shadow: 0 0.5px 0.5px $secondary-light,
+      -1px -1px 0 $dark-gray,
+      1px -1px 0 $dark-gray;
+      letter-spacing: 0.1em;
+      transform: scaleY(0.7);
+      -webkit-transform: scaleY(0.7);
+      -moz-transform: scaleY(0.7);
+            
+      :last-child {
+        margin-right: 0;
+      }
+    }
+
+  }
 }

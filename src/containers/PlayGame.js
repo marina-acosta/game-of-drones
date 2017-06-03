@@ -22,7 +22,7 @@ class PlayGame extends Component {
         let _view = <div>
                         <PlayRound round={this.state.round} players={this.props.players} moves={this.props.moves}
                                    submitRound={(e) => this.handleSubmitRound(e)} />
-                        <RoundsLog log={this.state.log} />
+                        <RoundsLog log={this.state.log} players={this.props.players} total={this.state.wins}/>
                     </div>
 
         if (this.state.wins[0] >= 3) {

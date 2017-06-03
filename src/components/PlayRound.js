@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Animation from '../../public/images/87013.gif'
 
 require('../styles/_play-round.scss')
 
@@ -35,7 +36,10 @@ export default class PlayRound extends Component {
                         onChange={(e) => this.handleMovementChange(e)}>
                     { _moves }
                 </select>
-                <input type="submit" value="PLAY" onClick={(e) => this.handleClick(e)}/>
+                <div style={{display:'inline-flex'}}>
+                    <img src={Animation} alt="Play" width="60" height="60" />
+                    <input type="submit" value="PLAY !" onClick={(e) => this.handleClick(e)}/>
+                </div>
             </div>
         )
     }

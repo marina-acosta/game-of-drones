@@ -9,7 +9,8 @@ export default class ShowWinner extends Component {
         return (
             <div className="winner-container">
                 <div className="title"> We have a WINNER!! </div>
-                <div> {this.props.winner} is the new EMPEROR! </div>
+                <div className="subtitle"> {this.props.winner} is the new EMPEROR! </div>
+                <img src={require('../../public/images/Rock-Paper-Scissors.gif')}/>
                 <input type="submit" value="Play again" onClick={(e) => this.handleClick(e)}/>
             </div>
         )

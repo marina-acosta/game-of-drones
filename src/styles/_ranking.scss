@@ -5,7 +5,41 @@
   text-align: center;
 
   .title {
-    font-size: $big;
+    font-size: $medium;
+    display: block;
+    text-align: left;
+    margin-left: 20px;
+    line-height: 60px;
+    font-weight: bold;
+    text-shadow: 0 0.5px 0.5px $secondary-light,
+    -1px -1px 0 $dark-gray,
+    1px -1px 0 $dark-gray,
+    -1px 1px 0 $dark-gray,
+    1px 1px 0 $dark-gray;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
   }
 
+  table {
+    margin: auto;
+    font-size: 35px;
+    border: solid 1px $main-color;
+    width: 75%;
+    background-color: $light-gray;
+
+    tr:first-child {
+      font-weight: bold;
+    }
+
+    tr {
+      border: solid 1px $dark-gray;
+
+      td {
+        border: solid 1px $dark-gray;
+      }
+    }
+
+  }
 }

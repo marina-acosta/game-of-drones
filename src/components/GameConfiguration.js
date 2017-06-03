@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-require('../styles/_ranking.scss')
+require('../styles/_configuration.scss')
 
 
 export default class Ranking extends Component {
@@ -30,12 +30,18 @@ export default class Ranking extends Component {
         }
 
         return (
-            <div className="ranking-container">
+            <div className="configuration-container">
                 {_moves}
                 <input type="button" value="Add" className="submit-button" onClick={(e) => this.handleAdd(e)}/>
                 <input type="submit" value="Save" className="submit-button" onClick={(e) => this.handleSubmit(e)}/>
             </div>
         )
+    }
+
+    componentWillMount() {
+        this.setState({
+            nextConfig: this.props.configuration
+        })
     }
 
     componentWillReceiveProps(props) {

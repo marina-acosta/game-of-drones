@@ -1,0 +1,15 @@
+@import "parameters";
+
+.configuration-container {
+  text-align: center;
+  font-size: $medium;
+  font-weight: bold;
+
+  input {
+    margin: 10px;
+
+    @media (max-width: $break-point-1) {
+      max-width: 70%;
+    }
+  }
+}

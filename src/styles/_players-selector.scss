@@ -2,15 +2,20 @@
 
 .players-selector-container {
   display: block;
-  border: solid 2px $bordersColor;
+  background-color: $light-gray;
+  border: solid 2px $main-color;
   border-radius: 30px;
   padding: 45px 30px;
   margin: auto;
   width: 600px;
   text-align: center;
 
-  @media (max-width: $break-medium) {
+  @media (max-width: $break-point-2) {
     width: 60%;
+
+    input {
+      max-width: 80%;
+    }
   }
 
   .title {
