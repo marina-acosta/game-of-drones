@@ -27,6 +27,7 @@
 
       .cell {
         display: block;
+        max-height: 23px;
         padding: 10px;
         vert-align: middle;
         font-size: $small;
@@ -41,6 +42,8 @@
       }
 
       .image {
+        height: 43px;
+        max-height: 43px;
         padding: 0;
       }
 

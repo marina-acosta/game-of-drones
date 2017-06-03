@@ -13,43 +13,43 @@ export default class RoundsLog extends Component {
         let _rounds = this.props.log.map((result, index) => {
                             if (result.winner === this.props.players[0]) {
                                 return (
-                                    <div className="column">
+                                    <div className="column" key={index}>
                                         <div className="cell">
                                             {result.round}
                                         </div>
                                         <div className="cell image">
-                                            <img src={winner} alt="Win" height="38" width="38"/>
+                                            <img src={winner} alt="Win" height="43" width="43"/>
                                         </div>
                                         <div className="cell image">
-                                            <img src={looser} alt="Loose" height="38" width="38"/>
+                                            <img src={looser} alt="Loose" height="43" width="43"/>
                                         </div>
                                     </div>
                                 )
                             } else if (result.winner === this.props.players[1]) {
                                 return (
-                                    <div className="column">
+                                    <div className="column" key={index}>
                                         <div className="cell">
                                             {result.round}
                                         </div>
                                         <div className="cell image">
-                                            <img src={looser} alt="Loose" height="38" width="38"/>
+                                            <img src={looser} alt="Loose" height="43" width="43"/>
                                         </div>
                                         <div className="cell image">
-                                            <img src={winner} alt="Win" height="38" width="38"/>
+                                            <img src={winner} alt="Win" height="43" width="43"/>
                                         </div>
                                     </div>
                                 )
                             } else {
                                 return (
-                                    <div className="column">
+                                    <div className="column" key={index}>
                                         <div className="cell">
                                             {result.round}
                                         </div>
                                         <div className="cell image">
-                                            <img src={tie} alt="Tie" height="38" width="38"/>
+                                            <img src={tie} alt="Tie" height="43" width="43"/>
                                         </div>
                                         <div className="cell image">
-                                            <img src={tie} alt="Tie" height="38" width="38"/>
+                                            <img src={tie} alt="Tie" height="43" width="43"/>
                                         </div>
                                     </div>
                                 )
