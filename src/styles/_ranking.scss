@@ -1,0 +1,11 @@
+@import "parameters";
+
+.ranking-container {
+  display: block;
+  text-align: center;
+
+  .title {
+    font-size: $big;
+  }
+
+}
