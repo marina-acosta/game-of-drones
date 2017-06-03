@@ -45,6 +45,12 @@ export default class PlayersSelectorComponent extends Component {
         if (!this.playerOne.value){
             _playerOneClassName = 'input-error';
             ok = false;
+        } else {
+            if (this.playerOne.value === this.playerTwo.value){
+                _playerOneClassName = 'input-error';
+                _playerTwoClassName = 'input-error';
+                ok = false;
+            }
         }
         if (!this.playerTwo.value){
             _playerTwoClassName = 'input-error';

@@ -8,7 +8,8 @@ export default class Ranking extends Component {
     constructor() {
         super();
         this.state = {
-            nextConfig: []
+            nextConfig: [],
+            error: ""
         }
     }
 
@@ -29,9 +30,17 @@ export default class Ranking extends Component {
                 })
         }
 
+        let _error = <div></div>;
+        if (this.state.error) {
+            _error = <div className="warning-class">
+                {this.state.error}
+            </div>
+        }
+
         return (
             <div className="configuration-container">
                 {_moves}
+                {_error}
                 <input type="button" value="Add" className="submit-button" onClick={(e) => this.handleAdd(e)}/>
                 <input type="submit" value="Save" className="submit-button" onClick={(e) => this.handleSubmit(e)}/>
             </div>
@@ -65,7 +74,8 @@ export default class Ranking extends Component {
             }
         });
         this.setState({
-            nextConfig: nextMoves
+            nextConfig: nextMoves,
+            error: ""
         })
     }
 
@@ -77,7 +87,8 @@ export default class Ranking extends Component {
             kills: ""
         })
         this.setState({
-            nextConfig: _moves
+            nextConfig: _moves,
+            error: ""
         })
     }
 
@@ -86,14 +97,36 @@ export default class Ranking extends Component {
         let _moves = this.state.nextConfig;
         _moves.splice(parseInt(e.target.name), 1);
         this.setState({
-            nextConfig: _moves
+            nextConfig: _moves,
+            error: ""
         })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.onSubmit({
-            configuration: this.state.nextConfig
-        })
+        if (this.state.nextConfig.length >= 3 && this.checkNoEmptyValues()) {
+            this.props.onSubmit({
+                configuration: this.state.nextConfig
+            })
+        } else if (this.state.nextConfig.length < 3){
+            this.setState({
+                error: "If you are looking for a funny game ... you should configure at least 3 elements!"
+            })
+        } else {
+            this.setState({
+                error: "Ups! It looks like you are missing some values !!"
+            })
+        }
+    }
+
+
+    checkNoEmptyValues(){
+        let ok = true;
+        for (var i=0; i < this.state.nextConfig.length && ok; i++) {
+            if (this.state.nextConfig[i].move === "" || this.state.nextConfig[i].kills === "") {
+                ok = false;
+            }
+        }
+        return ok;
     }
 }
