@@ -73,8 +73,25 @@ class PlayGame extends Component {
         let _winner = this.calculateWinner(e.play);
         let _wins = this.state.wins;
         if ( _winner !== -1) {
-            // there is a winner in the round => increase winner's count
+            // if there is a winner in the round => increase winner's count
             _wins[_winner]++;
+            // If is the third victory => store it !
+            if (_wins[_winner] === 3) {
+                let ranking = JSON.parse(localStorage.getItem('ranking'));
+                let stop = false;
+                for (var i = 0; i < ranking.length && !stop; i++){
+
+                    if (ranking[i].name === this.props.players[_winner]) {
+                        ranking[i].count ++;
+                        stop = true;
+                    }
+                }
+                if (!stop) {
+                    ranking.push({ name: this.props.players[_winner], count: 1 });
+                }
+                console.log(ranking, JSON.stringify(ranking));
+                localStorage.setItem('ranking', JSON.stringify(ranking));
+            }
         }
         // Add winner to log, sum one to winner's count and increase round
         let _log = this.state.log;
@@ -86,7 +103,7 @@ class PlayGame extends Component {
             log: _log,
             round: this.state.round + 1,
             wins: _wins
-        })
+        });
     }
 }
 
