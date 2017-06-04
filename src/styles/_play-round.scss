@@ -66,3 +66,46 @@
     margin: 15px 10px 0 0;
   }
 }
+
+.round-result {
+    -webkit-animation: seconds 1.0s forwards;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 4s;
+    animation: seconds 1.0s forwards;
+    animation-iteration-count: 1;
+    animation-delay: 4s;
+    position: relative;
+    color: $main-color;
+    font-family: "Great Vibes", cursive;
+    font-size: $big;
+    line-height: 40px;
+    font-weight: normal;
+    margin: 15px 0;
+    text-align: center;
+    text-shadow: 0 1px 1px $secondary-light,
+    -1px -1px 0 $secondary-dark,
+    1px -1px 0 $secondary-dark,
+    4px 4px 0 $secondary-light,
+    5px 5px 0 $secondary-light,
+    6px 6px 0 $secondary-light,
+    7px 7px 0 $secondary-light;
+    letter-spacing: 0.1em;
+}
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+  }

@@ -5,6 +5,7 @@ import PlayRound from '../components/PlayRound'
 import RoundsLog from '../components/RoundsLog'
 import ShowWinner from '../components/ShowWinner'
 
+require('../styles/_play-round.scss')
 
 class PlayGame extends Component {
 
@@ -13,7 +14,8 @@ class PlayGame extends Component {
         this.state = {
             round: 1,
             log: [],
-            wins: [0, 0]
+            wins: [0, 0],
+            roundText:""
         }
     }
 
@@ -22,6 +24,10 @@ class PlayGame extends Component {
         let _view = <div>
                         <PlayRound round={this.state.round} players={this.props.players} moves={this.props.moves}
                                    submitRound={(e) => this.handleSubmitRound(e)} />
+
+
+                        <div className="round-result" key={this.state.round}>{ this.state.roundText } </div>
+
                         <RoundsLog log={this.state.log} players={this.props.players} total={this.state.wins}/>
                     </div>
 
@@ -51,6 +57,7 @@ class PlayGame extends Component {
     // Given a play => returns -1 is nobody wins, 0 if player one wins, 1 if player two wins
     calculateWinner(play) {
         let _result = -1;
+        let _roundTxt = play[0]+"'s war: The round was a tie!";
         let _oneWinsObject = JSON.stringify({
             "move": play[0],
             "kills": play[1]
@@ -62,9 +69,14 @@ class PlayGame extends Component {
         this.props.moves.map((rule) => {
             if (JSON.stringify(rule) === _oneWinsObject) {
                 _result = 0;
+                _roundTxt = rule.move + " kills " + rule.kills + ": " + this.props.players[0] + " wins the round ! "
             } else if (JSON.stringify(rule) === _twoWinsObject) {
                 _result = 1;
+                _roundTxt = rule.move + " kills " + rule.kills + ": " + this.props.players[1] + " wins the round ! "
             }
+        });
+        this.setState({
+            roundText: _roundTxt
         });
         return _result
     }

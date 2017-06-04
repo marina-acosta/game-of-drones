@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import Animation from '../../public/images/87013.gif'
 
-require('../styles/_play-round.scss')
-
-
 export default class PlayRound extends Component {
 
     constructor() {
